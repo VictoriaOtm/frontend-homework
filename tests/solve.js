@@ -9,4 +9,10 @@ QUnit.module('Тестируем функцию solve', function () {
 		assert.strictEqual(solve('(5 - x) * (x + 5)', 3), 16);
 		assert.strictEqual(solve('((5 - x) * (x + 5)) * x * x', 3), 144);
 	});
+
+	QUnit.test('Проверка solve на длинном выражении ', function (assert) {
+        assert.strictEqual(solve('10 * x * x + 12 - x + (x + x * 100) - 20 * (x + 13)', 8), 1032);
+        assert.strictEqual(solve('x * x * x * x + x * x * x + x * x + x - 123', 2), -93);
+        assert.strictEqual(solve('10233 + x + 12 * x + (x + (x + 1234 * x) * 2) - 2 * x + x * (89 + x)', 3), 17955);
+    })
 });
